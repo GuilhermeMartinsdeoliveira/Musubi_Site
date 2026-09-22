@@ -1,0 +1,64 @@
+<header class="site-header">
+    <div class="container top-bar">
+        <a href="{{ url_for('home') }}" class="logo">
+            <img src="{{ url_for('static', filename='assets/img/logo.jpg') }}" alt="Musubi Ateliê">
+        </a>
+
+        <div class="top-bar-actions">
+            <div class="social-links">
+                <a href="https://www.instagram.com/musubi_atelie/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/musubiatelie" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+
+            <div class="top-bar-divider"></div>
+
+            {% if session.get('usuario') %}
+                {% if usuario_logado and usuario_logado.is_admin %}
+                <a href="{{ url_for('admin_dashboard') }}" class="link-auth"><i class="bi bi-gear"></i> Painel Admin</a>
+            {% endif %}
+                <a href="{{ url_for('logout') }}" class="link-auth">Sair</a>
+            {% else %}
+                <a href="{{ url_for('cadastro') }}" class="link-auth">Cadastre-se</a>
+                <a href="{{ url_for('login') }}" class="link-auth">Login</a>
+            {% endif %}
+
+            <a href="{{ url_for('carrinho') }}" class="cart-link" aria-label="Carrinho">
+                <i class="bi bi-cart3"></i>
+                {% if cart_count and cart_count > 0 %}
+                <span class="cart-badge">{{ cart_count }}</span>
+                {% endif %}
+            </a>
+        </div>
+    </div>
+
+    <div class="nav-bar" id="navBar">
+        <div class="container">
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}#inicio" class="{{ 'active' if active == 'inicio' }}">Início</a></li>
+                    <li><a href="{{ url_for('home') }}#sobre" class="{{ 'active' if active == 'sobre' }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('home') }}#servicos" class="{{ 'active' if active == 'servicos' }}">Serviços</a></li>
+                    <li><a href="{{ url_for('loja') }}" class="{{ 'active' if active == 'loja' }}">Loja</a></li>
+                    <li><a href="{{ url_for('home') }}#contato" class="{{ 'active' if active == 'contato' }}">Contato</a></li>
+                </ul>
+            </nav>
+
+            <a href="{{ url_for('loja') }}" class="btn-loja-online">
+                <i class="bi bi-shop"></i> Loja Online
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    (function () {
+        var toggle = document.getElementById('navToggle');
+        var navBar = document.getElementById('navBar');
+        if (toggle && navBar) {
+            toggle.addEventListener('click', function () {
+                navBar.classList.toggle('open');
+            });
+        }
+    })();
+</script>

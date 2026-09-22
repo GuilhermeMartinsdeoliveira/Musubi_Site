@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria de Interiores — Musubi Ateliê</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.jpg') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/servicos.css') }}">
+</head>
+
+<body>
+
+    {% include '_header.html' %}
+
+    <section class="service-hero">
+        <div class="container">
+            <span class="eyebrow">Serviço</span>
+            <h1>Consultoria de Interiores personalizada</h1>
+            <p>Na Musubi, transformamos espaços em ambientes equilibrados, funcionais e com identidade. Nossa consultoria combina planejamento, estética e soluções práticas para cada projeto — tudo à distância, no seu ritmo.</p>
+        </div>
+    </section>
+
+    <main class="container service-main">
+
+        <section class="service-section">
+            <h2>O que oferecemos</h2>
+            <p>O serviço de consultoria de interiores da Musubi é dedicado a clientes que desejam um projeto com atenção aos detalhes, conforto e estilo. Atuamos em residências, escritórios e espaços comerciais, criando ambientes que comunicam a proposta do cliente.</p>
+
+            <div class="service-cards">
+                <div class="service-detail-card">
+                    <i class="bi bi-clipboard-data"></i>
+                    <h3>Diagnóstico completo</h3>
+                    <p>Análise do espaço, levantamento de necessidades e estudo de circulação para identificar oportunidades de melhoria e aproveitamento.</p>
+                </div>
+                <div class="service-detail-card">
+                    <i class="bi bi-palette"></i>
+                    <h3>Conceito de design</h3>
+                    <p>Proposta visual com paleta de cores, materiais, mobiliário e soluções de iluminação alinhadas à linguagem da Musubi.</p>
+                </div>
+                <div class="service-detail-card">
+                    <i class="bi bi-diagram-3"></i>
+                    <h3>Planejamento funcional</h3>
+                    <p>Organização de cada ambiente para melhorar a experiência de uso, com soluções práticas, ergonomia e estética integrada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <h2>Como funciona</h2>
+            <p>Nosso processo é simples e transparente, sempre com foco no resultado final.</p>
+
+            <div class="service-steps">
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Briefing inicial e levantamento técnico do seu espaço.</p>
+                </div>
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Proposta de layout e moodboard alinhados ao seu estilo.</p>
+                </div>
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Seleção de cores, materiais e mobiliário.</p>
+                </div>
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Orientação para execução e acompanhamento do projeto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <div class="service-highlights">
+                <h2>Por que escolher a Musubi</h2>
+                <p style="margin-bottom:0;">Com a Musubi, você recebe uma consultoria que valoriza funcionalidade, identidade e conforto.</p>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Projetos com identidade e coerência visual</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Ambientes funcionais e sofisticados</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Soluções práticas e de fácil implantação</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Atendimento personalizado e orientado ao cliente</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="service-cta">
+            <h4>Vamos transformar seu espaço?</h4>
+            <p>Fale com a nossa equipe e agende sua consultoria.</p>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn btn-gold">
+                <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+            </a>
+        </div>
+
+    </main>
+
+    {% include '_footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

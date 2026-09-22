@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ 'Editar produto' if produto else 'Novo produto' }} — Musubi Ateliê</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.jpg') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    {% include '_header.html' %}
+    <main class="admin-page">
+        <div class="container admin-form-container admin-product-form-container">
+            <a href="{{ url_for('admin_dashboard') }}" class="back-link"><i class="bi bi-arrow-left"></i> Voltar ao painel</a>
+            <div class="form-heading"><span class="eyebrow">Catálogo</span><h1>{{ 'Editar produto' if produto else 'Novo produto' }}</h1><p>Preencha as informações que serão exibidas na loja online.</p></div>
+            <form method="post" enctype="multipart/form-data" class="admin-form">
+                {% if erro %}<div class="form-error"><i class="bi bi-exclamation-circle"></i>{{ erro }}</div>{% endif %}
+                <div class="form-grid">
+                    <div class="field-full"><label for="nome">Nome do produto</label><input type="text" id="nome" name="nome" maxlength="100" value="{{ produto.nome if produto else '' }}" required autofocus></div>
+                    <div><label for="preco">Preço (R$)</label><input type="text" id="preco" name="preco" inputmode="decimal" placeholder="59,90" value="{{ '%.2f'|format(produto.preco)|replace('.', ',') if produto else '' }}" required></div>
+                    <div><label for="categoria_id">Categoria</label><select id="categoria_id" name="categoria_id"><option value="">Sem categoria</option>{% for categoria in categorias %}<option value="{{ categoria.id }}" {% if produto and produto.categoria_id == categoria.id %}selected{% endif %}>{{ categoria.nome }}</option>{% endfor %}</select></div>
+                    <div class="field-full"><label for="descricao">Descrição</label><textarea id="descricao" name="descricao" rows="5" maxlength="1000">{{ produto.descricao if produto else '' }}</textarea></div>
+                    <div class="field-full"><label for="imagem">Imagem {% if produto %}<span class="field-help">(opcional para manter a atual)</span>{% endif %}</label><input type="file" id="imagem" name="imagem" accept=".jpg,.jpeg,.png,.webp"><span class="field-help">Formatos aceitos: JPG, PNG ou WEBP. Tamanho máximo: 5 MB.</span>{% if produto and produto.imagem %}<div class="current-image"><img src="{{ url_for('static', filename=produto.imagem) }}" alt="Imagem atual"><span>Imagem atual</span></div>{% endif %}</div>
+                </div>
+                <div class="form-actions"><a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline">Cancelar</a><button type="submit" class="btn btn-primary"><i class="bi bi-check-lg"></i> Salvar produto</button></div>
+            </form>
+        </div>
+    </main>
+    {% include '_footer.html' %}
+</body>
+</html>

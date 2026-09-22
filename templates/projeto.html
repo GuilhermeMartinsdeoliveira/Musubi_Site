@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 3D — Musubi Ateliê</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.jpg') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/servicos.css') }}">
+</head>
+
+<body>
+
+    {% include '_header.html' %}
+
+    <section class="service-hero">
+        <div class="container">
+            <span class="eyebrow">Serviço</span>
+            <h1>Projeto 3D: veja seu ambiente antes da reforma</h1>
+            <p>Transformamos a planta do seu espaço em uma visualização tridimensional realista, para você aprovar cada detalhe — móveis, cores, materiais e iluminação — antes de qualquer obra começar.</p>
+        </div>
+    </section>
+
+    <main class="container service-main">
+
+        <section class="service-section">
+            <h2>O que oferecemos</h2>
+            <p>O Projeto 3D da Musubi transforma ideias em imagens realistas. É a forma mais segura de visualizar o resultado final, evitar retrabalho e tomar decisões com confiança antes de investir na reforma.</p>
+
+            <div class="service-cards">
+                <div class="service-detail-card">
+                    <i class="bi bi-badge-3d"></i>
+                    <h3>Modelagem realista</h3>
+                    <p>Criamos a planta em 3D com móveis, texturas e proporções fiéis ao ambiente real.</p>
+                </div>
+                <div class="service-detail-card">
+                    <i class="bi bi-lightbulb"></i>
+                    <h3>Simulação de iluminação</h3>
+                    <p>Testamos diferentes cenários de luz natural e artificial para o clima ideal do ambiente.</p>
+                </div>
+                <div class="service-detail-card">
+                    <i class="bi bi-camera-reels"></i>
+                    <h3>Renderizações e tour virtual</h3>
+                    <p>Imagens em alta definição e passeio virtual pelos principais ângulos do projeto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <h2>Como funciona</h2>
+            <p>Do levantamento de medidas à entrega das imagens finais, cada etapa é pensada para dar clareza ao seu projeto.</p>
+
+            <div class="service-steps">
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Envio da planta baixa ou medidas do ambiente.</p>
+                </div>
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Modelagem 3D do espaço com mobiliário e acabamentos.</p>
+                </div>
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Apresentação das renderizações e ajustes com o cliente.</p>
+                </div>
+                <div class="service-step">
+                    <div class="step-number"></div>
+                    <p>Entrega final das imagens em alta resolução.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <div class="service-highlights">
+                <h2>Por que escolher o Projeto 3D Musubi</h2>
+                <p style="margin-bottom:0;">Visualize antes de construir e evite surpresas no meio da obra.</p>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Imagens fotorrealistas do ambiente</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Redução de erros e retrabalho na obra</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Facilita a aprovação de fornecedores e mobiliário</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Entrega rápida e acompanhamento próximo</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="service-cta">
+            <h4>Quer ver seu projeto ganhar vida em 3D?</h4>
+            <p>Envie as medidas do seu espaço e receba um orçamento.</p>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn btn-gold">
+                <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+            </a>
+        </div>
+
+    </main>
+
+    {% include '_footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

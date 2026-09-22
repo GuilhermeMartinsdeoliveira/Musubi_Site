@@ -1,0 +1,124 @@
+/* Login / Cadastro */
+
+body.auth-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        linear-gradient(rgba(32,26,23,0.55), rgba(32,26,23,0.55)),
+        url('../assets/img/banner_musubi.png') no-repeat center;
+    background-size: cover;
+}
+
+.auth-topbar {
+    padding: 24px 0;
+}
+
+.auth-topbar .container {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-topbar img {
+    height: 46px;
+    border-radius: 8px;
+    background: var(--musubi-cream);
+    padding: 6px 12px;
+}
+
+.auth-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 60px;
+}
+
+.card-auth {
+    max-width: 460px;
+    width: 100%;
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    background: var(--musubi-cream);
+    overflow: hidden;
+}
+
+.card-auth .card-body {
+    padding: 44px 40px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: var(--musubi-gray);
+    font-size: 14.5px;
+}
+
+.form-label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--musubi-black);
+    margin-bottom: 6px;
+}
+
+.form-control {
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--musubi-cream-dark);
+    padding: 12px 16px;
+    font-family: var(--font-body);
+}
+
+.form-control:focus {
+    border-color: var(--musubi-red);
+    box-shadow: 0 0 0 3px rgba(139, 28, 23, 0.12);
+}
+
+.auth-alert {
+    background: #fbe7e5;
+    color: var(--musubi-red-dark);
+    border: 1px solid rgba(139,28,23,0.25);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: var(--musubi-gray);
+}
+
+.auth-footer-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14.5px;
+    color: var(--musubi-gray);
+}
+
+.auth-footer-link a {
+    color: var(--musubi-red);
+    font-weight: 600;
+}
+
+.auth-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: var(--musubi-gray);
+    margin-bottom: 18px;
+}
+
+.auth-back:hover {
+    color: var(--musubi-red);
+}

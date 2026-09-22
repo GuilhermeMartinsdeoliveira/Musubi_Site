@@ -1,0 +1,293 @@
+/* Página inicial — hero, sobre, serviços, produtos em destaque */
+
+.hero {
+    position: relative;
+    height: 88vh;
+    min-height: 560px;
+    background: linear-gradient(rgba(32, 26, 23, 0.25), rgba(32, 26, 23, 0.55)), url('../assets/img/banner_musubi.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-right {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 0 24px;
+}
+
+.hero-right h1 {
+    color: var(--musubi-cream);
+    font-size: clamp(32px, 8vw, 60px);
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+
+.hero-right button {
+    width: 220px;
+    padding: 16px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--musubi-gold);
+    color: var(--musubi-red-dark);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hero-right button:hover {
+    background-color: var(--musubi-red);
+    color: var(--musubi-cream);
+    transform: scale(1.05);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+/* SOBRE */
+
+.about {
+    background-color: var(--musubi-white);
+    padding: 110px 0;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.about-text { flex: 1; }
+
+.about-text h2 {
+    font-size: clamp(26px, 3.4vw, 38px);
+    line-height: 1.25;
+    margin-bottom: 26px;
+    text-transform: none;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    color: var(--musubi-gray);
+    max-width: 560px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.stat-item strong {
+    font-size: 32px;
+    font-family: var(--font-heading);
+    display: block;
+    color: var(--musubi-red);
+}
+
+.stat-item p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--musubi-gray);
+}
+
+.carousel-box {
+    flex: 1;
+    width: 100%;
+    max-width: 480px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-red);
+}
+
+.carousel-box .carousel-item img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 44px;
+    }
+    .about-stats { justify-content: center; }
+    .carousel-box { box-shadow: none; max-width: 100%; }
+}
+
+/* SERVIÇOS */
+
+.services {
+    background-color: var(--musubi-cream-dark);
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: clamp(26px, 3.4vw, 36px);
+}
+
+.services > p {
+    color: var(--musubi-gray);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: var(--musubi-red);
+    width: 270px;
+    height: 320px;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    color: var(--musubi-cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 30px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.service-card i {
+    font-size: 40px;
+    color: var(--musubi-gold);
+}
+
+.service-card h3 {
+    color: var(--musubi-cream);
+    font-size: 20px;
+}
+
+.service-card p {
+    font-size: 13.5px;
+    color: rgba(247, 244, 238, 0.8);
+    line-height: 1.6;
+}
+
+.service-card a span {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 10px 22px;
+    border: 1px solid var(--musubi-gold);
+    border-radius: 999px;
+    color: var(--musubi-gold);
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.service-card a:hover span {
+    background: var(--musubi-gold);
+    color: var(--musubi-red-dark);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+/* PRODUTOS EM DESTAQUE */
+
+.products {
+    background: var(--musubi-white);
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: clamp(26px, 3.4vw, 36px);
+}
+
+.products-grid {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.prod-card {
+    background: var(--musubi-white);
+    padding: 18px;
+    border-radius: var(--radius-md);
+    width: 280px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+    text-align: left;
+}
+
+.prod-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.prod-img {
+    height: 220px;
+    background: var(--musubi-cream-dark);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.prod-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.prod-card:hover .prod-img img {
+    transform: scale(1.06);
+}
+
+.prod-card h3 {
+    font-size: 17px;
+    color: var(--musubi-black);
+    font-family: var(--font-body);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.prod-card .price {
+    display: block;
+    font-weight: 700;
+    color: var(--musubi-red);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.prod-card .btn {
+    width: 100%;
+    padding: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero-right h1 { font-size: 32px; }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loja — Musubi Ateliê</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.jpg') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loja.css') }}">
+</head>
+
+<body>
+
+    {% include '_header.html' %}
+
+    <div class="loja-banner">
+        <img src="{{ url_for('static', filename='assets/img/banner_loja.jpg') }}" alt="Loja Musubi">
+        <div class="loja-banner-overlay">
+            <div class="container">
+                <h1>Artesanato japonês para o seu lar</h1>
+                <p>Peças únicas, feitas à mão, para transformar qualquer ambiente.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="benefits">
+        <div class="container row">
+            <div class="benefit">
+                <i class="bi bi-truck"></i>
+                <h5>Entrega Nacional</h5>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-shield-lock"></i>
+                <h5>Compra Segura</h5>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-gift"></i>
+                <h5>Para Presente</h5>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-stars"></i>
+                <h5>Artesanato Premium</h5>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <form class="search-box" action="{{ url_for('loja') }}" method="get">
+                <input type="text" name="q" value="{{ busca or '' }}" placeholder="Digite o que procura">
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <section class="categorias-section">
+        <div class="container">
+            <h2>Categorias</h2>
+            <div class="categoria-grid">
+                <div class="category-card">
+                    <img src="{{ url_for('static', filename='assets/img/kit-ceramica.jpg') }}" alt="Cerâmicas">
+                    <div class="category-overlay">Cerâmicas</div>
+                </div>
+                <div class="category-card">
+                    <img src="{{ url_for('static', filename='assets/img/quadro-ferrari.jpg') }}" alt="Quadros">
+                    <div class="category-overlay">Quadros</div>
+                </div>
+                <div class="category-card">
+                    <img src="{{ url_for('static', filename='assets/img/presente.jpg') }}" alt="Presentes">
+                    <div class="category-overlay">Presentes</div>
+                </div>
+                <div class="category-card">
+                    <img src="{{ url_for('static', filename='assets/img/prato.jpg') }}" alt="Pratos">
+                    <div class="category-overlay">Pratos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="produtos-section">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <p class="subtitle">
+                {% if busca %}
+                    Resultados para "{{ busca }}"
+                {% else %}
+                    Peças artesanais selecionadas especialmente para você
+                {% endif %}
+            </p>
+
+            <div class="produtos-grid">
+                {% for produto in produtos %}
+                <div class="product-card">
+                    <a href="{{ url_for('produto_detalhes', id=produto.id) }}" class="product-card-link">
+                        <div class="prod-img-wrap">
+                            <img src="{{ url_for('static', filename=produto.imagem) }}" alt="{{ produto.nome }}">
+                        </div>
+                        <div class="card-body">
+                            <h5>{{ produto.nome }}</h5>
+                            <span class="price">R$ {{ "%.2f"|format(produto.preco)|replace(".", ",") }}</span>
+                        </div>
+                    </a>
+                    <div class="card-actions">
+                        <a href="{{ url_for('produto_detalhes', id=produto.id) }}" class="btn btn-outline">
+                            <i class="bi bi-eye"></i> Ver detalhes
+                        </a>
+                        <a href="{{ url_for('adicionar', id=produto.id) }}" class="btn btn-primary">
+                            <i class="bi bi-cart-plus"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="empty-state">
+                    <i class="bi bi-emoji-frown"></i>
+                    <p>Nenhum produto encontrado{% if busca %} para "{{ busca }}"{% endif %}.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% include '_footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

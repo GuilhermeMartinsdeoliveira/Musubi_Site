@@ -1,0 +1,39 @@
+<footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <img src="{{ url_for('static', filename='assets/img/logo.jpg') }}" alt="Musubi Ateliê">
+            <p>Artesanato japonês autêntico e consultoria de interiores. Transformamos espaços em experiências de vida, peça por peça.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Serviços</h4>
+            <ul>
+                <li><a href="{{ url_for('consultoria') }}">Consultoria Online</a></li>
+                <li><a href="{{ url_for('projeto') }}">Projeto 3D</a></li>
+                <li><a href="{{ url_for('acessoria') }}">Assessoria Completa</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Empresa</h4>
+            <ul>
+                <li><a href="{{ url_for('home') }}#sobre">Sobre nós</a></li>
+                <li><a href="{{ url_for('loja') }}">Loja</a></li>
+                <li><a href="{{ url_for('carrinho') }}">Meu carrinho</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/musubi_atelie/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/musubiatelie" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Musubi Ateliê — Feito por Guilherme Martins. Ultima atualização: 01/09/2026 18:30</p>
+    </div>
+</footer>
