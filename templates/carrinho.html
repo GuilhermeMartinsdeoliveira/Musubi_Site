@@ -78,9 +78,9 @@
                         <span class="total-value">R$ {{ "%.2f"|format(total)|replace(".", ",") }}</span>
                     </div>
 
-                    <button class="btn btn-primary" type="button">
+                    <a href="{{ url_for('checkout') }}" class="btn btn-primary">
                         <i class="bi bi-lock"></i> Finalizar Compra
-                    </button>
+                    </a>
                     <a href="{{ url_for('loja') }}" class="btn btn-outline">Continuar comprando</a>
                 </aside>
 

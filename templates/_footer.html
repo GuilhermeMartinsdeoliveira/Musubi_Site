@@ -1,8 +1,29 @@
 <footer class="site-footer" id="contato">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <img src="{{ url_for('static', filename='assets/img/logo.jpg') }}" alt="Musubi Ateliê">
-            <p>Artesanato japonês autêntico e consultoria de interiores. Transformamos espaços em experiências de vida, peça por peça.</p>
+            <img src="{{ url_for('static', filename='assets/img/logo.jpg') }}"" alt=" Musubi Ateliê"
+                style="height: 120px; width: auto; max-width: 100%; object-fit: contain;">
+            <p>Artesanato japonês autêntico e consultoria de interiores. Transformamos espaços em experiências de vida,
+                peça por peça.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Endereço</h4>
+            <p style="font-size: 14px; color: rgba(247, 244, 238, 0.7); line-height: 1.6; margin-bottom: 12px;">
+                <i class="bi bi-geo-alt"></i> Rua Exemplo, 123<br>
+                Bairro São Paulo - SP<br>
+                CEP: XXXXX-XXX
+            </p>
+            <a href="#" style="font-size: 13px; color: var(--musubi-gold); text-decoration: underline;">Ver no mapa</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contato</h4>
+            <ul style="font-size: 14px; color: rgba(247, 244, 238, 0.7); line-height: 1.6;">
+                <li style="margin-bottom: 10px;"><i class="bi bi-whatsapp"></i> (11) 99999-9999</li>
+                <li style="margin-bottom: 10px;"><i class="bi bi-envelope"></i> contato@musubiatelie.com.br</li>
+                <li><i class="bi bi-clock"></i> Seg a Sex: 09h às 18h</li>
+            </ul>
         </div>
 
         <div class="footer-col">
@@ -15,21 +36,22 @@
         </div>
 
         <div class="footer-col">
-            <h4>Empresa</h4>
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/musubi_atelie/" target="_blank" rel="noopener"
+                    aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/musubiatelie" target="_blank" rel="noopener" aria-label="Facebook"><i
+                        class="bi bi-facebook"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                        class="bi bi-whatsapp"></i></a>
+            </div>
+
+            <h4 style="margin-top: 24px;">Empresa</h4>
             <ul>
                 <li><a href="{{ url_for('home') }}#sobre">Sobre nós</a></li>
                 <li><a href="{{ url_for('loja') }}">Loja</a></li>
-                <li><a href="{{ url_for('carrinho') }}">Meu carrinho</a></li>
+                <li><a href="{{ url_for('equipe') }}">Nossa Equipe</a></li>
             </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Siga-nos</h4>
-            <div class="social-links">
-                <a href="https://www.instagram.com/musubi_atelie/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.facebook.com/musubiatelie" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-            </div>
         </div>
     </div>
 

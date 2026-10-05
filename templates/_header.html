@@ -13,6 +13,7 @@
             <div class="top-bar-divider"></div>
 
             {% if session.get('usuario') %}
+                <span class="link-auth" style="font-weight: 600; color: var(--musubi-red);">Olá, {{ usuario_logado.nome.split(' ')[0] if usuario_logado else 'Usuário' }}! 👋</span>
                 {% if usuario_logado and usuario_logado.is_admin %}
                 <a href="{{ url_for('admin_dashboard') }}" class="link-auth"><i class="bi bi-gear"></i> Painel Admin</a>
             {% endif %}
@@ -38,6 +39,7 @@
                 <ul>
                     <li><a href="{{ url_for('home') }}#inicio" class="{{ 'active' if active == 'inicio' }}">Início</a></li>
                     <li><a href="{{ url_for('home') }}#sobre" class="{{ 'active' if active == 'sobre' }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('equipe') }}" class="{{ 'active' if active == 'equipe' }}">Nossa Equipe</a></li>
                     <li><a href="{{ url_for('home') }}#servicos" class="{{ 'active' if active == 'servicos' }}">Serviços</a></li>
                     <li><a href="{{ url_for('loja') }}" class="{{ 'active' if active == 'loja' }}">Loja</a></li>
                     <li><a href="{{ url_for('home') }}#contato" class="{{ 'active' if active == 'contato' }}">Contato</a></li>

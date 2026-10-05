@@ -138,7 +138,7 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 200;
-  background: var(--musubi-cream);
+  background: var(--musubi-white);
   box-shadow: var(--shadow-sm);
 }
 
@@ -150,7 +150,7 @@ ul { list-style: none; }
 }
 
 .top-bar .logo img {
-  height: 52px;
+  height: 75px;
   width: auto;
 }
 
@@ -234,6 +234,7 @@ ul { list-style: none; }
 
 .nav-bar {
   background: var(--musubi-red);
+  padding: 12px 0;
 }
 
 .nav-bar .container {
@@ -281,6 +282,9 @@ ul { list-style: none; }
 }
 
 .btn-loja-online {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--musubi-gold);
   color: var(--musubi-red-dark);
   padding: 10px 26px;
@@ -346,8 +350,8 @@ ul { list-style: none; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.4fr 1.2fr 1fr 1fr 1fr;
+  gap: 30px;
   padding-bottom: 50px;
   border-bottom: 1px solid rgba(247, 244, 238, 0.12);
 }
@@ -355,7 +359,8 @@ ul { list-style: none; }
 .footer-brand img {
   height: 46px;
   margin-bottom: 16px;
-  filter: brightness(0) invert(1);
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: screen;
 }
 
 .footer-brand p {
@@ -451,3 +456,36 @@ ul { list-style: none; }
 .breadcrumb a {
   color: var(--musubi-gold);
 }
+
+/* =========================================================
+   Ajustes Responsivos Extras (Mobile)
+   ========================================================= */
+@media (max-width: 650px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .top-bar .logo img {
+    height: 75px;
+  }
+  .top-bar-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .link-auth {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .top-bar-divider {
+    display: none;
+  }
+  .page-hero {
+    padding: 40px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}
+

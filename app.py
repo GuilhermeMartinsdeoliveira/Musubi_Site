@@ -359,6 +359,15 @@ def acessoria():
     )
 
 
+@app.route("/equipe")
+def equipe():
+
+    return render_template(
+        "equipe.html",
+        active="sobre"
+    )
+
+
 # ============================================================
 # LOJA
 # ============================================================
@@ -401,6 +410,25 @@ def produto_detalhes(id):
         produto=produto,
         active="loja"
     )
+
+
+@app.route("/api/produtos/sugestoes")
+def produtos_sugestoes():
+    busca = request.args.get("q", "").strip()
+    if not busca:
+        return {"produtos": []}
+    
+    produtos = Produto.query.filter(Produto.nome.ilike(f"%{busca}%")).limit(5).all()
+    
+    return {
+        "produtos": [
+            {
+                "id": p.id,
+                "nome": p.nome,
+                "url": url_for("produto_detalhes", id=p.id)
+            } for p in produtos
+        ]
+    }
 
 
 # ============================================================
@@ -699,6 +727,33 @@ def carrinho():
         total=total,
         active="loja"
     )
+
+
+@app.route("/checkout", methods=["GET", "POST"])
+@login_required
+def checkout():
+    carrinho_sessao = get_carrinho()
+    if not carrinho_sessao:
+        flash("Seu carrinho está vazio.")
+        return redirect(url_for("loja"))
+
+    if request.method == "POST":
+        salvar_carrinho({})
+        flash("Pedido finalizado (simulação)! Obrigado por comprar na Musubi Ateliê.", "success")
+        return redirect(url_for("home"))
+
+    ids = [int(i) for i in carrinho_sessao.keys()]
+    produtos = Produto.query.filter(Produto.id.in_(ids)).all() if ids else []
+    itens = []
+    total = 0.0
+
+    for produto in produtos:
+        quantidade = carrinho_sessao.get(str(produto.id), 0)
+        subtotal = produto.preco * quantidade
+        total += subtotal
+        itens.append({"produto": produto, "quantidade": quantidade, "subtotal": subtotal})
+
+    return render_template("checkout.html", itens=itens, total=total, active="loja")
 
 
 # ============================================================

@@ -16,17 +16,15 @@
 </head>
 <body class="auth-body">
 
-    <div class="auth-topbar">
-        <div class="container">
-            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='assets/img/logo.jpg') }}" alt="Musubi"></a>
-        </div>
-    </div>
-
     <div class="auth-wrap">
         <div class="card card-auth mx-auto">
             <div class="card-body">
 
-                <a href="{{ url_for('home') }}" class="auth-back"><i class="bi bi-arrow-left"></i> Voltar ao site</a>
+                <a href="{{ url_for('home') }}" class="auth-back fw-bold"><i class="bi bi-arrow-left"></i> Voltar ao site</a>
+
+                <div class="text-center mb-4">
+                    <img src="{{ url_for('static', filename='assets/img/logo.jpg') }}" alt="Musubi" style="height: 80px; border-radius: 8px; object-fit: contain; display: block; margin: 0 auto;">
+                </div>
 
                 <div class="auth-header">
                     <h2>Entrar</h2>

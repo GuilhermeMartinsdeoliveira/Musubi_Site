@@ -263,18 +263,24 @@
     padding-top: 12px;
     padding-bottom: 12px;
     font-size: 12px;
-    white-space: nowrap;
+    white-space: normal;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 650px) {
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .card-actions {
         flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 10px;
     }
 
     .card-actions .btn {
         width: 100%;
-        flex-basis: 100%;
-        font-size: 11px;
+        flex: none;
+        font-size: 13px;
         padding-left: 18px;
         padding-right: 18px;
     }
